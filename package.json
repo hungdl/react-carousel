@@ -1,0 +1,31 @@
+{
+  "name": "react-carousel",
+  "version": "1.0.0",
+  "description": "A carousel component written for ReactJS application written in TypeScript. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suhdev/react-carousel.git"
+  },
+  "keywords": [
+    "Carousel",
+    "Responsive",
+    "ReactJS",
+    "TypeScript"
+  ],
+  "author": "Suhail Abood <suhail.abood@gmail.com> (suhailabood.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suhdev/react-carousel/issues"
+  },
+  "homepage": "https://github.com/suhdev/react-carousel#readme",
+  "devDependencies": {
+    "jslint": "^0.10.1",
+    "jspm": "^0.16.39",
+    "tslint": "^3.11.0",
+    "typescript": "^1.8.10"
+  }
+}

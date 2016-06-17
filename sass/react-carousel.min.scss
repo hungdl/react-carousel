@@ -1,0 +1,77 @@
+$react-carousel-height:32px !default; 
+$react-carousel-button-width:42px !default;
+$react-carousel-background:transparent !default;
+$react-carousel-viewport-background:transparent !default; 
+$react-carousel-item-background:rgba(0,0,0,0.7) !default;
+$react-carousel-item-color:white !default;
+$react-carousel-transition-time:0.7s !default;
+$react-carousel-transition-fn:cubic-bezier(0,0,0,1) !default;
+%box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.react-carousel{
+    @extend %box;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    height:$react-carousel-height;
+    line-height:$react-carousel-height;
+    width:100%;
+    background:$react-carousel-background;
+
+    .rc-btn{
+        @extend %box;
+        position:absolute;
+        top:0px;
+        height:$react-carousel-height;
+        width:$react-carousel-button-width;
+        cursor:pointer;
+        text-align: center;
+
+        &.prev{
+            left:0px;
+        }
+
+        &.next{
+            right:0px;
+        }
+    }
+
+    .rc-viewport{
+        @extend %box;
+        position:absolute;
+        height:$react-carousel-height;
+        line-height: $react-carousel-height;
+        overflow:hidden;
+        left:$react-carousel-button-width;
+        right:$react-carousel-button-width;
+        background:$react-carousel-viewport-background;
+        
+        .rc-viewport-wrapper{
+            @extend %box;
+            position:absolute;
+            left:0px;
+            top:0px;
+            height:100%;
+            -webkit-transition: transform $react-carousel-transition-time $react-carousel-transition-fn;
+            -o-transition: transform $react-carousel-transition-time $react-carousel-transition-fn;
+            transition: transform $react-carousel-transition-time $react-carousel-transition-fn;
+        }
+    }
+
+    .rc-item{
+        @extend %box;
+        position:relative;
+        height:100%;
+        float:left;
+        background-color: $react-carousel-item-background;
+        color:$react-carousel-item-color;
+        cursor:pointer;
+    }
+
+}
