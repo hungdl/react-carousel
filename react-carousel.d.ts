@@ -1,6 +1,6 @@
 /// <reference path="./typings/react/react.d.ts" />
 
-declare module "react-carousel"{
+declare module "sh-react-carousel"{
     import * as React from 'react'; 
     export interface CarouselItemDef{
         label:string;

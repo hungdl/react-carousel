@@ -1,5 +1,5 @@
 {
-  "name": "react-carousel",
+  "name": "sh-react-carousel",
   "version": "1.0.0",
   "description": "A carousel component written for ReactJS application written in TypeScript. ",
   "main": "index.js",
