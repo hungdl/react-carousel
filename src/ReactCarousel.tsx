@@ -1,11 +1,11 @@
 import * as React from 'react'; 
 import * as ReactDOM from 'react-dom';
 
-import {CarouselItem,CarouselItemDef} from './CarouselItem';
-
+import {CarouselItemDef,CarouselItem} from './CarouselItem';
 
 export interface ReactCarouselProps {
     selIndex:number;
+    className?:string;
     items:CarouselItemDef[]; 
     onItemClick:Function;
     prevButton:React.ReactElement<any>;
@@ -98,6 +98,7 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
     render(){
         let props = this.props,
             state = this.state,
+            clz = props.className || "",
             gutterWidth = props.gutter || 0,
             pos = this._calculatePosition(),
             xPos = pos.x,
@@ -118,7 +119,7 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
             );
         });
         return (
-            <div className="react-carousel" style={{width:props.width+'px'}}>
+            <div className={"react-carousel "+clz} style={{width:props.width+'px'}}>
                 <div className="rc-btn prev" onClick={this.onPrev}>{props.prevButton}</div>
                 <div className="rc-viewport">
                     <div className="rc-viewport-wrapper" style={style}>{items}</div>
