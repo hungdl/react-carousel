@@ -14,6 +14,7 @@ export interface ReactCarouselProps {
     buttonWidth?:number;
     gutter?:number;
     width:number;
+    itemRenderer?:(item:CarouselItemDef,index:number,onClick:Function)=>React.ReactElement<any>;
 }
 
 export interface ReactCarouselState {
@@ -101,13 +102,14 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
             clz = props.className || "",
             gutterWidth = props.gutter || 0,
             pos = this._calculatePosition(),
+            itemRenderer = props.itemRenderer || null,
             xPos = pos.x,
             style = {
                 width:((pos.itemWidth+gutterWidth)*props.items.length)+'px',
                 transform:'translate('+[xPos+'px','0px']+')'
             },
             items = this.props.items.map((e,i)=>{
-            return (
+            return (itemRenderer && itemRenderer(e,i,this.onItemClick)) || (
                 <CarouselItem 
                     label={e.label} 
                     key={e.key} 

@@ -23,7 +23,10 @@ An optional parameter used to set the width of the next/prev buttons. Defaults t
 An optional parameter used to set the gutter between carousel items, defaults to 0. Note: this parameter will not actually set the gutter between items, please use CSS to do so. 
 It is mainly to account for the gutter when calculating widths of the carousel items.
 10. `className`
-An optional parameter used to set an extra class for the carousel component root element. Defaults to ""   
+An optional parameter used to set an extra class for the carousel component root element. Defaults to ""  
+11. `itemRenderer`
+An optional callback function to override the carousel's item rendering. The callback will receive an item definition `{label:string,key:string}`, the item index, and the itemOnClick function,
+the function should return `React.ReactElement<any>` that represent that specific item.     
 
 ##Styling
 1. Component CSS selector `.react-carousel`
