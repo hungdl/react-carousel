@@ -60,7 +60,7 @@ export class ReactCarousel extends React.Component {
             width: ((pos.itemWidth + gutterWidth) * props.items.length) + 'px',
             transform: 'translate(' + [xPos + 'px', '0px'] + ')'
         }, items = this.props.items.map((e, i) => {
-            return (itemRenderer && itemRenderer(e, i, this.onItemClick)) || (React.createElement(CarouselItem, {label: e.label, key: e.key, onClick: this.onItemClick, index: i, width: pos.itemWidth, itemKey: e.key, isSelected: props.selIndex === i}));
+            return (itemRenderer && itemRenderer(e, i, pos.itemWidth, this.onItemClick)) || (React.createElement(CarouselItem, {label: e.label, key: e.key, onClick: this.onItemClick, index: i, width: pos.itemWidth, itemKey: e.key, isSelected: props.selIndex === i}));
         });
         return (React.createElement("div", {className: "react-carousel " + clz, style: { width: props.width + 'px' }}, React.createElement("div", {className: "rc-btn prev", onClick: this.onPrev}, props.prevButton), React.createElement("div", {className: "rc-viewport"}, React.createElement("div", {className: "rc-viewport-wrapper", style: style}, items)), React.createElement("div", {className: "rc-btn next", onClick: this.onNext}, props.nextButton)));
     }
