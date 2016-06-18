@@ -21,7 +21,9 @@ The width of the carousel component excluding the next/button width.
 An optional parameter used to set the width of the next/prev buttons. Defaults to 42.
 9. `gutter`
 An optional parameter used to set the gutter between carousel items, defaults to 0. Note: this parameter will not actually set the gutter between items, please use CSS to do so. 
-It is mainly to account for the gutter when calculating widths of the carousel items.   
+It is mainly to account for the gutter when calculating widths of the carousel items.
+10. `className`
+An optional parameter used to set an extra class for the carousel component root element. Defaults to ""   
 
 ##Styling
 1. Component CSS selector `.react-carousel`
@@ -32,7 +34,7 @@ It is mainly to account for the gutter when calculating widths of the carousel i
 
 ##Usage
 
-HTML file
+###HTML file
 ```html
 <!DOCTYPE html>
 <html>
@@ -45,7 +47,7 @@ HTML file
 </html>
 ```
 
-1. TypeScript/JavaScript (ES6) 
+###TypeScript/JavaScript (ES6) 
 
 ```typescript
 //main.ts | main.js
@@ -93,4 +95,24 @@ var comp = ReactDOM.render((<ReactCarousel
     gutter={4}
     buttonWidth={42}
     width={400} />),document.getElementById('ComponentContainer'));
+```
+
+
+##Usage with JSPM
+```
+import {ReactCarousel} from 'sh-react-carousel'; 
+import * as React from 'react'; 
+import * as ReactDOM from 'react-dom'; 
+
+ReactDOM.render((<ReactCarousel 
+    items={items} 
+    selIndex={0} 
+    prevButton={(<span>Prev</span>)}
+    nextButton={(<span>Next</span>)}
+    onItemClick={(idx:number,key:string)=>{console.log(idx);console.log(key);}}
+    minItemWidth={80}
+    gutter={4}
+    buttonWidth={42}
+    width={400} />),document.getElementById('ComponentContainer'));
+
 ```
