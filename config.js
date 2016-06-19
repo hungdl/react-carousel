@@ -17,6 +17,7 @@ System.config({
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
+    "lodash": "npm:lodash@4.13.1",
     "react": "npm:react@15.1.0",
     "react-dom": "npm:react-dom@15.1.0",
     "github:jspm/nodelibs-assert@0.1.0": {
@@ -140,6 +141,10 @@ System.config({
     "npm:isomorphic-fetch@2.2.1": {
       "node-fetch": "npm:node-fetch@1.5.3",
       "whatwg-fetch": "npm:whatwg-fetch@1.0.0"
+    },
+    "npm:lodash@4.13.1": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:loose-envify@1.2.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",

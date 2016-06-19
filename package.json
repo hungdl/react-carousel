@@ -1,6 +1,6 @@
 {
   "name": "sh-react-carousel",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A carousel component written for ReactJS application written in TypeScript. ",
   "main": "index.js",
   "scripts": {
@@ -31,10 +31,12 @@
     "eslint": "^2.13.0",
     "jslint": "^0.10.1",
     "jspm": "^0.16.39",
+    "lodash": "^4.13.1",
     "tslint": "^3.11.0",
     "typescript": "^1.8.10"
   },
   "dependencies": {
+    "lodash": "^4.13.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0"
   },
@@ -44,6 +46,7 @@
     "format": "es6",
     "dependencies": {
       "immutable": "^3.8.1",
+      "lodash": "^4.13.1",
       "react": "^15.1.0",
       "react-dom": "^15.1.0"
     },
