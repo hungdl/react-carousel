@@ -32,6 +32,7 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
         this.onNext = this.onNext.bind(this);
         this.onPrev = this.onPrev.bind(this); 
         this.onResize = debounce(this.onResize.bind(this),300);
+        window.addEventListener('resize',this.onResize);
         this.state = {
             selIndex:props.selIndex,
             viewIndex:props.selIndex,
