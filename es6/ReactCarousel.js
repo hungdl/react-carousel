@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as debounce from 'lodash/debounce';
+import { debounce } from 'lodash';
 import { CarouselItem } from './CarouselItem';
 export class ReactCarousel extends React.Component {
     constructor(props) {
