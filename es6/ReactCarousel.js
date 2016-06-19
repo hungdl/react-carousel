@@ -8,7 +8,6 @@ export class ReactCarousel extends React.Component {
         this.onItemClick = this.onItemClick.bind(this);
         this.onNext = this.onNext.bind(this);
         this.onPrev = this.onPrev.bind(this);
-        console.log(debounce);
         this.onResize = debounce(this.onResize.bind(this), 300);
         window.addEventListener('resize', this.onResize);
         this.state = {
