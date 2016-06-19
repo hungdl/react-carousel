@@ -31,6 +31,7 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
         this.onItemClick = this.onItemClick.bind(this);
         this.onNext = this.onNext.bind(this);
         this.onPrev = this.onPrev.bind(this); 
+        console.log(debounce);
         this.onResize = debounce(this.onResize.bind(this),300);
         window.addEventListener('resize',this.onResize);
         this.state = {
@@ -137,8 +138,9 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
                     isSelected={props.selIndex === i} />
             );
         });
+        
         return (
-            <div className={"react-carousel "+clz} style={{width:state.width+'px'}}>
+            <div className={"react-carousel "+clz}>
                 <div className="rc-btn prev" onClick={this.onPrev}>{props.prevButton}</div>
                 <div className="rc-viewport">
                     <div className="rc-viewport-wrapper" style={style}>{items}</div>
