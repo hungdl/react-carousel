@@ -13,7 +13,8 @@ export class ReactCarousel extends React.Component {
         this.state = {
             selIndex: props.selIndex,
             viewIndex: props.selIndex,
-            width: props.width || 200
+            width: props.width || 200,
+            update: false,
         };
     }
     onNext() {
@@ -46,6 +47,11 @@ export class ReactCarousel extends React.Component {
                 viewIndex: vi
             });
         }
+    }
+    forceUpdate() {
+        this.setState({
+            update: !this.state.update
+        });
     }
     componentWillReceiveProps(props) {
         this.setState({

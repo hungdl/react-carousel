@@ -22,6 +22,7 @@ export interface ReactCarouselState {
     selIndex?:number;
     viewIndex?:number;
     width?:number;
+    update?:boolean;
 }
 
 export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarouselState>{
@@ -36,7 +37,8 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
         this.state = {
             selIndex:props.selIndex,
             viewIndex:props.selIndex,
-            width:props.width || 200
+            width:props.width || 200,
+            update:false,
         };
     }
 
@@ -73,6 +75,12 @@ export class ReactCarousel extends React.Component<ReactCarouselProps,ReactCarou
                 viewIndex:vi
             });
         }
+    }
+
+    forceUpdate(){
+        this.setState({
+            update:!this.state.update
+        }); 
     }
 
     componentWillReceiveProps(props:ReactCarouselProps){
